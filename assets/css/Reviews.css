@@ -1,0 +1,159 @@
+.Reviews {
+    padding: 42px 0;    
+    background-image: url(./../img/towers-sea.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 589px;
+}
+@media(max-width:767px) {
+    .Reviews {
+    height: 700px;
+    }
+}
+@media(max-width:550px) {
+    .Reviews {
+    height: 400px;
+    }
+}
+
+
+.Reviews::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.699999988079071;
+    background: #FFF;
+}
+
+.Reviews .carousel .carousel-item::after{
+    background: none;
+}
+
+.Reviews .carousel .carousel-inner{
+    height: max-content;
+    transform: translateY(30%);
+}
+.Reviews .container .carousel-inner {
+    position: relative;
+    /* z-index: 1111; */
+}
+.Reviews .container .carousel-inner .carousel-item img {
+    margin-bottom: 32px !important;
+}
+.Reviews .container .carousel-inner .carousel-item p {
+    color: #151515;
+    font-family: 'Open Sans';
+    font-size: 1.8rem !important;
+    /* font-style: italic; */
+    font-weight: var(--fw-400) !important;
+    line-height: 29.25px;
+    margin-bottom: 24px !important;
+}
+.Reviews .container .carousel-inner .carousel-item cite {
+    font-size: 2.4rem;
+    font-style: italic;
+    font-weight: var(--fw-700);
+    line-height: normal;
+    color: #355096;
+    margin-bottom: 13px !important;
+}
+.Reviews .container blockquote {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.Reviews .container .carousel-inner .carousel-item span {
+    color: #787878;
+    font-size: 1.5rem;
+    font-weight: var(--fw-400);
+    line-height: 2.4rem;
+    text-transform: capitalize;
+}
+.Reviews .container .carousel-indicators {
+    margin-top: 0;
+    position: relative;
+    transform: translateY(437%);
+}
+
+.Reviews .container .carousel-indicators button {
+    margin-top: 10px;
+    border: none !important;
+    width: 25px;
+    height: 25px ;
+    border-radius: 50% !important;
+    background-color: #787878 !important;
+}
+@media(max-width:992px) {
+    .Reviews .container .carousel-indicators button {
+        margin-top: 20px;
+        border: none !important;
+        width: 15px !important;
+        height: 15px !important;
+        border-radius: 50% !important;
+        background-color: #787878 !important;
+    }
+}
+.Reviews .container .carousel-indicators button.active {
+    background-color: #355096 !important;
+}
+
+
+.Reviews blockquote:before {
+    content: "" !important;
+}
+
+
+
+blockquote:after {
+    border: none !important;
+    width: 0 !important;
+}
+
+
+@media(max-width : 532px) {
+    .Reviews .container .carousel-inner .carousel-item p {
+        font-size: 1rem !important;
+        line-height: 1.4rem;
+    }
+    .Reviews .container .carousel-inner .carousel-item cite {
+        font-size: 1.4rem;
+    }
+    .Reviews .container .carousel-inner .carousel-item span {
+        font-size: 1rem;
+        line-height: normal;
+    }
+    .Reviews .container .carousel-indicators {
+        margin-top: 0;
+        position: relative;
+        /* z-index: 111; */
+    }
+    
+    .Reviews .container .carousel-indicators button {
+        margin-top: 5px;
+        border: none !important;
+        width: 8px ;
+        height: 8px ;
+        border-radius: 50% !important;
+        background-color: #787878 !important;
+    }
+    
+    .Reviews .container .carousel-indicators button.active {
+        background-color: #355096 !important;
+    }
+    
+    
+    .Reviews blockquote:before {
+        content: "" !important;
+    }
+    
+    
+    
+    blockquote:after {
+        border: none !important;
+        width: 0 !important;
+    }
+    
+}

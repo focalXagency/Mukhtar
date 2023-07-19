@@ -1,0 +1,162 @@
+let myLisToFilter = document.querySelectorAll(".Questions .category ul li");
+let myAccordion = document.querySelector(".Questions .accordion");
+
+function fetchQuestion() {
+  let result = {"questions" : [
+    {
+        "question"       : "1-Which airports in United Arab Emirates can I travel from?",
+        "answer" : "We can offer airflights reservation service between United Arab Emirates and Syria Through the following airports: Dubai Sharjah - Abu Dhabi",
+        "cat"    : "reservation"
+    },
+    {
+        "question"       : "2-Which airports in Syria can I travel from?",
+        "answer" : "We can offer airflights reservation service between United Arab Emirates and Syria through the following airports: Damascus – Aleppo- Lattakia",
+        "cat"    : "reservation"
+    },
+    {
+        "question"       : "3-Can I book only one way trip?",
+        "answer" : "The reservation could be only from Syria to United Arab Emirates or the opposite state. In other cases, could be from Syria to United Arab Emirates then back to Syria or the opposite state.",
+        "cat"    : "reservation"
+    },
+    {
+        "question"       : "4-Are there specific destinations at your company or I can book what I want?",
+        "answer" : "because we are agents with many of airline companies, we will divide the reservations into two categories :<br> the first category: <br>1-from UAE to more 200 destinations around the world.<br>2-between UAE and Syria.<br> The second category: <br>around the world where we book online for traveler whatever the destination or airline company could be.",
+        "cat"    : "reservation"
+    },
+
+    {
+        "question"       : "5-What is the related information for booking to United Arab Emirates?",
+        "answer" : "for travelers to United Arab Emirates, they need passport with expiration longer than six months, residence document for resident and entry visa for visitor. ",
+        "cat"    : "reservation"
+    },
+
+    {
+        "question"       : "6-What is the allowed weight can I bring with me?",
+        "answer" : "In general cases, the allowed weight for traveler is 30kg or 20kg with additional 7kg hand-bag. it is possible to add an amount to the basic weight, you can communicate with customer service to inquire more.",
+        "cat"    : "reservation"
+    },
+    {
+        "question"       : "7-Shall I inquire more about the price of tickets?",
+        "answer" : "the ticket's price can vary in accordance with the trip's date. you can communicate with customer service team to help you know more about our prices and choose what you like.",
+        "cat"    : "reservation"
+    },
+    {
+        "question"       : "1-Could I inquire more information about visas?",
+        "answer" : "-The primary visas which we offer to the United Arab Emirates are in three kinds:<br>Tourism visa (single entry): this kind of visas is the most requested visa in United Arab Emirates with rate 90% and is one of the primary services we offer in Almukhtar company<br> -Tourism visa (multiple entry)<br>-Family visitor visa.",
+        "cat"    : "visas"
+    },
+    {
+        "question"       : "2-How long time for visa to be done?",
+        "answer" : "We spend about one or two days for all kinds of visas (tourism, family visitor) which we offer in our company.",
+        "cat"    : "visas"
+    },
+    {
+        "question"       : "3-How long the expiration for visa before ended?",
+        "answer" : "The expiration at the first time (entry to UAE) is two months.<br>Whereas after the entry may vary if the visa is tourism depends on the client’s demand   ( one or two months).",
+        "cat"    : "visas"
+    },
+    {
+        "question"       : "4-What the information and transactions are required for requesting visa?  ",
+        "answer" : "For the tourism visa :  activated passport at least six months- personal photo-Copied photo of passport.<br>For the family visitor visa : activated passport at least six months -personal photo- copied photo of passport – work contract for host with salary 5000 dirhams or more – authenticated proof of kinship – family document or marriage contract or license of birth.        ",
+        "cat"    : "visas"
+    },
+    {
+        "question"       : "5-Could I inquire more about visa’s prices?",
+        "answer" : "you can communicate with the customer service team to know all the kinds and prices of visas which are available and help you to choose what you want.",
+        "cat"    : "visas"
+    },
+    {
+        "question"       : "1-Could I print the trip’s path which I received and send it to the Embassy?",
+        "answer" : "Of course. We will send you the trip’s path via E-mail with pdf format and you can print it and give it to the embassy as evidence for travelling. ",
+        "cat"    : "services"
+    },
+    {
+        "question"       : "2-How can I trust with you and your service and why I should use it?",
+        "answer" : "1-You can view what our clients say about us.<br>2-Our documents are legal and optimal for any related purposes.<br> 3-We save our clients with rate 100% through PayPal payment gateway. <br> 4-We save you from risk and you will not pay thousands of dollars for booking.<br>5-We have many partners with our network like airline companies.<br>6-We can deal with many changes related to the trip path without any additional cost.<br>7-We have the ability to keep the bookings for a long time.<br>8-We can book again the same trip path with different airline companies.<br>9-We work all the time for you to be not worried when you are outside the embassy searching for help",
+        "cat"    : "services"
+    },
+    {
+        "question"       : "3-Are there any canceled transections for tickets I have to do after getting the visa? If there are, how much they cost?",
+        "answer" : "We offer the cancelation of booking behalf of you. There is no need to be worried for any additional payment or anything else. What you pay is fees for only booking flight or hotels.<br>After you get visa, put your plan and be excited with your trip",
+        "cat"    : "services"
+    },
+
+    {
+        "question"       : "4-What is the required information I have to give you for visa or hotel reservation?",
+        "answer" : "We do not request any secret information:<br>The full name.<br>details about the trip (starting position– destination - departure dates)<br>details about the hotel (the city –check in and check out dates (",
+        "cat"    : "services"
+    }
+  ]};
+  myQuestions = result.questions;
+  let myFilteredItems = [];
+  myLisToFilter.forEach((li) => {
+    myQuestions.forEach((question) => {
+      if (li.classList.contains("active") && question.cat.includes(li.dataset.cat)) {
+        myFilteredItems.push(question);
+        myAccordion.innerHTML = null;
+        showQuestions(myFilteredItems);
+      }
+    });
+    li.addEventListener("click", () => {
+      myFilteredItems = [];
+      myLisToFilter.forEach((li) => {
+      li.classList.remove("active");
+      myAccordion.innerHTML = null;
+      });
+      myQuestions.forEach((question) => {
+        if (question.cat.includes(li.dataset.cat)) {
+          myFilteredItems.push(question);
+        } 
+      });
+      li.classList.add("active");
+      showQuestions(myFilteredItems);
+    });
+  });
+}
+
+  fetchQuestion();
+
+
+
+  function showQuestions(array) {
+      myAccordion.innerHTML = null;
+    for (let index = 0; index < array.length; index++) {
+
+
+        myAccordion.innerHTML += `
+
+        <div class="accordion-item ${array[index].cat}">
+                  <h2 class="accordion-header" id="heading${index}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
+                        ${array[index].question}
+                    </button>
+                  </h2>
+                  <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                    ${array[index].answer}
+                    </div>
+                  </div>
+                </div>
+        
+        `
+      }
+  }
+ 
+//   function removeAddActive() {
+//     myLisToFilter.forEach(element => {
+//         element.classList.remove("active");
+//     });
+//     this.classList.add("active");
+// };
+
+
+// function manageImgs(array) {
+//     array.forEach(item => {
+//         item.style.display = "none";
+//     });
+//     let items = document.querySelectorAll(this.dataset.cat);
+//     console.log(items);
+//     items.forEach(item => {
+//         item.style.display = "block";
+//     });
+// };

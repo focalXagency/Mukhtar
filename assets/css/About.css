@@ -1,0 +1,87 @@
+
+.About .container {
+    margin-top: 7.4rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 6.4rem;
+}
+
+
+.About .details {
+    width: 48.09663%;
+    /* height: 424px; */
+}
+
+.About .details p {
+    font-size: 2rem;
+    font-family: 'Open Sans';
+    line-height: 3.2rem;
+}
+
+.About .achieve {
+    display: flex;
+    flex-direction: column;
+    gap: 5.6rem;
+    /* height: 424px; */
+}
+.About .achieve li {
+    display: inline-flex;
+}
+.About .achieve li .img {
+    position: relative;
+}
+.About .achieve li img {
+    padding: 1.6rem;
+    background: #F0F9FF;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+}
+
+.About .achieve li:not(:last-child) .img::after{
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 56px;
+    bottom: -56px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--main-color);
+}
+
+.About .achieve li span {
+    color: var(--span-color);
+    font-family: 'Open Sans';
+    font-size: 2rem;
+    line-height: 3.2rem;
+    padding-left: 2rem;
+    /* flex: 1; */
+}
+
+
+
+@media(max-width : 1022px) {    
+    .About .container {
+        flex-direction: column-reverse;
+    }
+    .About .details {
+        width: 100%;
+    }
+    .About .achieve {
+        padding: 0;
+    }    
+}
+
+@media(max-width : 532px) {
+    .About .container {
+        margin-top: 2rem;
+        gap: 2rem;
+    }
+    .About .details p {
+        font-size: 1.1rem;
+    }  
+    .About .achieve li span {
+        font-size: 1.1rem;
+    }
+    .About .achieve li img {
+        padding: .6rem;
+    }
+}
